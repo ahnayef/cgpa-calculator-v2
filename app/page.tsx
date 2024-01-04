@@ -29,17 +29,16 @@ export default function Home() {
             <div className={styles.iGrade}>
               <h3>Grade: &nbsp;</h3>
               <select>
-                <option value="4.0">A</option>
-                <option value="3.7">A-</option>
-                <option value="3.3">B+</option>
-                <option value="3.0">B</option>
-                <option value="2.7">B-</option>
-                <option value="2.3">C+</option>
-                <option value="2.0">C</option>
-                <option value="1.7">C-</option>
-                <option value="1.3">D+</option>
-                <option value="1.0">D</option>
-                <option value="0.0">F</option>
+                <option value="4">A+</option>
+                <option value="3.75">A</option>
+                <option value="3.5">A-</option>
+                <option value="3.25">B+</option>
+                <option value="3">B</option>
+                <option value="2.75">B-</option>
+                <option value="2.5">C+</option>
+                <option value="2.25">C-</option>
+                <option value="2">D</option>
+                <option value="0">F</option>
               </select>
             </div>
             <div className={styles.iCredit}>
