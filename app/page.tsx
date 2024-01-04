@@ -4,31 +4,41 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './page.module.css'
 import { RiShieldStarLine } from "react-icons/ri";
 
+const initialData: { subList: Array<{ subName: string, grade: number, credit: number }> } = {
+  subList: [
+    {
+      subName: '',
+      grade: 0,
+      credit: 0
+    }
+  ]
+}
+
 
 export default function Home() {
 
-  const Counter = ({ end }:{end:number}) => {
+  const Counter = ({ end }: { end: number }) => {
     const [count, setCount] = useState(0);
-  
+
     useEffect(() => {
       let start = 0;
       let totalMilSecDur = 1000;
       let increment = end / (totalMilSecDur / 50);
-  
+
       let timer = setInterval(() => {
         start += increment;
         if (start > end) start = end; // Ensure we don't exceed the end value
         setCount(parseFloat(start.toFixed(2)));
-  
+
         if (start.toFixed(2) == end.toFixed(2)) {
           clearInterval(timer);
         }
       }, 50); // Update every second
-  
+
       // Clear interval on component unmount
       return () => clearInterval(timer);
     }, [end]);
-  
+
     return <h1>{count.toFixed(2)}</h1>;
   };
 
@@ -40,7 +50,7 @@ export default function Home() {
 
           <div className={styles.iSub}>
             <h3>Course: </h3>
-            <input type="text" id='subject' list='subjects' required />
+            <input type="text" placeholder='Course Name' id='subject' list='subjects' required />
             <datalist id="subjects">
               <option value="Data Structure and Algorithm" />
               <option value="Electronic Devices and Circuits" />
@@ -105,8 +115,8 @@ export default function Home() {
             <h3>Credit</h3>
           </div>
 
-  
-  
+
+
         </div>
 
         <div className={styles.calculate}>
