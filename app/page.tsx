@@ -9,7 +9,15 @@ export default function Home() {
 
           <div className={styles.iSub}>
             <h3>Course: </h3>
-            <input type="text" required/>
+            <input type="text" id='subject' list='subjects' required/>
+            <datalist id="subjects">
+              <option value="CSE 101"/>
+              <option value="CSE 102"/>
+              <option value="CSE 103"/>
+              <option value="CSE 104"/>
+              <option value="CSE 105"/>
+              <option value="CSE 106"/>
+              </datalist>
           </div>
           <div className={styles.point}>
             <div className={styles.iGrade}>
