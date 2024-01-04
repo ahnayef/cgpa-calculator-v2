@@ -11,12 +11,18 @@ export default function Home() {
             <h3>Course: </h3>
             <input type="text" id='subject' list='subjects' required/>
             <datalist id="subjects">
-              <option value="CSE 101"/>
-              <option value="CSE 102"/>
-              <option value="CSE 103"/>
-              <option value="CSE 104"/>
-              <option value="CSE 105"/>
-              <option value="CSE 106"/>
+              <option value="Data Structure and Algorithm"/>
+              <option value="Electronic Devices and Circuits"/>
+              <option value="Electronic Devices and Circuits Lab"/>
+              <option value="Data Structure and Algorithm Lab"/>
+              <option value="Linear Algebra"/>
+              <option value="Fundamentals of physics"/>
+              <option value="Advanced Functional English"/>
+              <option value="Bangladesh Studies"/>
+              <option value="EDC"/>
+              <option value="EDC Lab"/>
+              <option value="DSA"/>
+              <option value="DSA Lab"/>
               </datalist>
           </div>
           <div className={styles.point}>
