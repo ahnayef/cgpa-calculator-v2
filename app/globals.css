@@ -1,5 +1,7 @@
-:root{
-  
+:root {
+  --background: #232530;
+  --background-light: #353949;
+  --text: #e0ebf2;
 }
 
 * {
@@ -7,6 +9,7 @@
   padding: 0;
 }
 
-body{
-
+body {
+  background-color: var(--background);
+  color: var(--text);
 }
