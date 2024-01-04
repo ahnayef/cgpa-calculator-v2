@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
 import { Tektur } from 'next/font/google'
+import {Josefin_Sans} from "next/font/google"; 
+
 import './globals.css'
 
 const tektur = Tektur({ subsets: ['latin'] })
+
+const josefinSans = Josefin_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'CGPA Calculator',
@@ -16,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={tektur.className}>{children}</body>
+      <body className={josefinSans.className}>{children}</body>
     </html>
   )
 }
