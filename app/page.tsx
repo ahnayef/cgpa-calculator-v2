@@ -5,17 +5,16 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.inputArea}>
         <h1>CGPA Calculator</h1>
-        <form className={styles.inputArea}>
+        <form className={styles.inputBox}>
 
           <div className={styles.iSub}>
             <h3>Course: </h3>
-            <input type="text" />
+            <input type="text" required/>
           </div>
           <div className={styles.point}>
             <div className={styles.iGrade}>
-              <h3>Grade: </h3>
-              <select name="" id="">
-
+              <h3>Grade: &nbsp;</h3>
+              <select>
                 <option value="4.0">A</option>
                 <option value="3.7">A-</option>
                 <option value="3.3">B+</option>
@@ -27,7 +26,6 @@ export default function Home() {
                 <option value="1.3">D+</option>
                 <option value="1.0">D</option>
                 <option value="0.0">F</option>
-
               </select>
             </div>
             <div className={styles.iCredit}>
@@ -50,7 +48,7 @@ export default function Home() {
             <h3>Grade</h3>
             <h3>Credit</h3>
           </div>
-          
+
           <div className={styles.sub}>
             <h3>Subject Lorem ipsum dolor sit amet.</h3>
             <h3>A</h3>
