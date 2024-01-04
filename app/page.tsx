@@ -3,9 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './page.module.css'
 import { RiShieldStarLine } from "react-icons/ri";
-// import {Josefin_Sans} from "next/font/google";
 
-// const josefinSans = Josefin_Sans({ subsets: ['latin'] });
 
 export default function Home() {
 
@@ -96,25 +94,19 @@ export default function Home() {
           </div>
 
           <div className={styles.sub}>
-            <h3>Subject Lorem ipsum dolor sit amet.</h3>
-            <h3>A</h3>
+            <h3>EDC</h3>
+            <h3>A+</h3>
             <h3>Credit</h3>
           </div>
+
           <div className={styles.sub}>
-            <h3>Subject Lorem, ipsum dolor.</h3>
-            <h3>C</h3>
+            <h3>DSA</h3>
+            <h3>A+</h3>
             <h3>Credit</h3>
           </div>
-          <div className={styles.sub}>
-            <h3>Subject Lorem ipsum dolor sit.</h3>
-            <h3>B</h3>
-            <h3>Credit</h3>
-          </div>
-          <div className={styles.sub}>
-            <h3>Subject</h3>
-            <h3>D</h3>
-            <h3>Credit</h3>
-          </div>
+
+  
+  
         </div>
 
         <div className={styles.calculate}>
