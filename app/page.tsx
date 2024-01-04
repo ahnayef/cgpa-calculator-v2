@@ -71,6 +71,10 @@ export default function Home() {
           </div>
         </div>
 
+        <div className={styles.calculate}>
+          <button>Calculate</button>
+        </div>
+
         <div className={styles.result}>
           <h2>CGPA: </h2>
           <h2>3.5</h2>
