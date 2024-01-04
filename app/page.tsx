@@ -17,6 +17,13 @@ const initialData: { subList: Array<{ subName: string, grade: number, credit: nu
 
 export default function Home() {
 
+  const [subState, setSubState] = useState(initialData.subList);
+
+  useEffect(() => {
+    console.log(subState)
+  }, [subState]);
+
+
   const Counter = ({ end }: { end: number }) => {
     const [count, setCount] = useState(0);
 
