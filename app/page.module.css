@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    padding: 0.5em;
 }
 
 .inputArea {
@@ -194,6 +194,7 @@
     border-radius: 50%;
     width: 8em;
     height: 8em;
+    box-sizing: content-box;
 }
 
 .cgCircle .cgGradient {
@@ -218,8 +219,8 @@
     position: absolute;
     background-color: var(--background);
     border-radius: 50%;
-    width: 7em;
-    height: 7em;
+    width: 7.2em;
+    height: 7.2em;
     animation: counterRotate 1s infinite linear;
 }
 
