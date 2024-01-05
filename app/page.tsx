@@ -119,10 +119,6 @@ export default function Home() {
                 <option value="Fundamentals of physics" />
                 <option value="Advanced Functional English" />
                 <option value="Bangladesh Studies" />
-                <option value="EDC" />
-                <option value="EDC Lab" />
-                <option value="DSA" />
-                <option value="DSA Lab" />
               </datalist>
             </div>
             <div className={styles.point}>
