@@ -79,6 +79,12 @@ export default function Home() {
   }
 
 
+  const scrollToBottom = () => {
+    const result = document.querySelector('#bottomRef');
+    result?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+
   const calcCGPA = () => {
 
     if (subState.length === 0) {
@@ -97,6 +103,9 @@ export default function Home() {
     const cgpa = totalGrade / totalCredit;
     toast.success(`Your CGPA is ${cgpa.toFixed(2)}`);
     setCgpa(cgpa);
+    setTimeout(() => {
+      scrollToBottom();
+    }, 500);
   }
 
   return (
@@ -188,7 +197,7 @@ export default function Home() {
             <button onClick={calcCGPA}>Calculate</button>
           </div>
 
-          <div className={styles.result}>
+          <div className={styles.result} id='result'>
 
             {cgpa > 0 &&
               <div className={styles.cgCircle}>
@@ -227,6 +236,7 @@ export default function Home() {
           </div>
 
         </div>
+        <div id="bottomRef"></div>
       </main>
     </>
   )
