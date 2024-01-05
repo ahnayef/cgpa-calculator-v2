@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'CGPA Calculator',
     images: [
       {
-        url: 'https://repository-images.githubusercontent.com/737059684/1745e1da-60d6-4454-ae8a-11e479d3b713',
+        url: 'https://raw.githubusercontent.com/ahnayef/cgpa-calculator-v2/main/app/assets/meta.png',
         width: 1280,
         height: 640,
         alt: 'Meta Image',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     creator: "_AHNayef_",
     images: [
       {
-        url: 'https://repository-images.githubusercontent.com/737059684/1745e1da-60d6-4454-ae8a-11e479d3b713',
+        url: 'https://raw.githubusercontent.com/ahnayef/cgpa-calculator-v2/main/app/assets/meta.png',
         width: 1280,
         height: 640,
         alt: 'Meta Image',
