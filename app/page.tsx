@@ -3,9 +3,13 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './page.module.css'
 import { RiShieldStarLine } from "react-icons/ri";
+import { TbInfoHexagonFilled } from "react-icons/tb";
+import { FaGithub } from "react-icons/fa";
+import { VscFeedback } from "react-icons/vsc";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import party from 'party-js'
+import Link from 'next/link';
 
 
 
@@ -119,6 +123,18 @@ export default function Home() {
     <>
       <ToastContainer theme='dark' />
       <main className={styles.main}>
+        <div className={styles.navGearIcon}>
+          <i><TbInfoHexagonFilled /></i>
+        </div>
+
+        <div className={styles.nav}>
+          <h2>Menu</h2>
+          <a href='/' target='_'><i><FaGithub /></i> Source code</a>
+          <Link href='/feedback' ><i><VscFeedback /></i> Feedback</Link>
+          <button>Close</button>
+        </div>
+
+
         <div className={styles.inputArea}>
           <h1 className={styles.heading}>CGPA Calculator</h1>
           <form className={styles.inputBox} onSubmit={handleAdd}>
