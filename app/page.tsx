@@ -141,7 +141,7 @@ export default function Home() {
       <input type="checkbox" className='triggerNav' id={styles.navTg} hidden/>
         <div className={styles.nav}>
           <h2>Menu</h2>
-          <a href='/' target='_'><i><FaGithub /></i> Source code</a>
+          <a href='https://github.com/ahnayef/cgpa-calculator-v2' target='_'><i><FaGithub /></i> Source code</a>
           <Link href='/feedback' ><i><VscFeedback /></i> Feedback</Link>
           <button onClick={triggerNav}>Close</button>
         </div>
