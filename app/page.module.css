@@ -5,13 +5,13 @@
     padding: 0.5em;
 }
 
-.nav{
+.nav {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.7) ;
+    background-color: rgba(0, 0, 0, 0.7);
     /* backdrop-filter: blur(10px); */
     padding: 1.5em;
     border: 1px solid #a2b6ca70;
@@ -37,9 +37,10 @@
 
 #navTg:checked~.nav {
     opacity: 1;
-    visibility: visible; /* Show the element when the checkbox is checked */
+    visibility: visible;
+    /* Show the element when the checkbox is checked */
     display: flex;
-    animation: zoomIn 0.5s linear;
+    animation: zoomIn 0.5s linear, boxShadowGlow 5s infinite;
     /* animation-duration: 0.4s; */
     animation-timing-function: cubic-bezier(.175, 0.885, 0.32, 1.275);
     -o-animation-timing-function: cubic-bezier(cubic-bezier(0.175, 0.885, 0.32, 1.275));
@@ -55,29 +56,30 @@
         opacity: 1;
     }
 }
+
 @keyframes zoomOut {
     from {
-      opacity: 1;
+        opacity: 1;
     }
-  
-    50% {
-      opacity: 0;
-      transform: scale3d(0.3, 0.3, 0.3);
-    }
-  
-    to {
-      opacity: 0;
-    }
-  }
 
-.nav h2{
+    50% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.nav h2 {
     font-weight: bold;
     color: var(--primary);
     margin-bottom: 1em;
     text-decoration: underline;
 }
 
-.nav a{
+.nav a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,12 +94,13 @@
     text-decoration: none;
     gap: 0.5em;
 }
-.nav a:hover{
+
+.nav a:hover {
     background-color: var(--background);
     color: var(--primary);
 }
 
-.nav button{
+.nav button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,7 +117,7 @@
     outline: none;
 }
 
-.navGearIcon{
+.navGearIcon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,15 +127,16 @@
     right: 0.5em;
     margin: 0.5em;
     z-index: 100;
+    animation: hueRotate 10s infinite ease-in-out alternate;
 }
 
-.navGearIcon i{
+.navGearIcon i {
     font-size: 2em;
     color: var(--primary);
     cursor: pointer;
 }
 
-.navGearIcon i:hover{
+.navGearIcon i:hover {
     color: #2F80ED;
 }
 
@@ -265,15 +269,17 @@
     border-radius: 0.3em;
     gap: 1em;
 }
-.sub:nth-child(1){
+
+.sub:nth-child(1) {
     background-color: var(--background-light);
 }
-.sub:nth-child(1) h3{
+
+.sub:nth-child(1) h3 {
     font-weight: bold;
     color: var(--primary);
 }
 
-.sub h3{
+.sub h3 {
     font-weight: 500;
 }
 
@@ -359,7 +365,8 @@
 .texts i {
     color: var(--primary);
 }
-.texts p{
+
+.texts p {
     opacity: 0.7;
 }
 
@@ -380,6 +387,18 @@
         box-shadow: 0 0 0.3px #56CCF2, 0 0 1px #56CCF2, 0 0 3px #56CCF2, 0 0 5px #56CCF2;
     }
 }
+
+@keyframes hueRotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+
+    }
+}
+
 
 @keyframes rotate {
     0% {
