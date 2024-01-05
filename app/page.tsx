@@ -9,7 +9,6 @@ import { VscFeedback } from "react-icons/vsc";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import party from 'party-js'
-import Link from 'next/link';
 
 
 
@@ -142,7 +141,7 @@ export default function Home() {
         <div className={styles.nav}>
           <h2>Menu</h2>
           <a href='https://github.com/ahnayef/cgpa-calculator-v2' target='_'><i><FaGithub /></i> Source code</a>
-          <Link href='/feedback' ><i><VscFeedback /></i> Feedback</Link>
+          <a href='mailto:ahnayef@yahoo.com?subject=Feedback%20on%20CGPA%20Calculator%20v2&body=Describe%20your%20issue:' target='_'><i><VscFeedback /></i> Feedback</a>
           <button onClick={triggerNav}>Close</button>
         </div>
 
