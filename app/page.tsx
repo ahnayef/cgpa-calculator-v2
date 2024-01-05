@@ -99,7 +99,7 @@ export default function Home() {
       totalCredit += Number(subState[i].credit);
       totalGrade += subState[i].credit * subState[i].grade;
     }
-    console.log(totalGrade, totalCredit);
+
     const cgpa = totalGrade / totalCredit;
     toast.success(`Your CGPA is ${cgpa.toFixed(2)}`);
     setCgpa(cgpa);
