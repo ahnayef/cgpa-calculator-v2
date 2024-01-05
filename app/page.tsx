@@ -18,10 +18,9 @@ const initialData: { subList: Array<{ subName: string, grade: number, credit: nu
 export default function Home() {
 
   const [subState, setSubState] = useState(initialData.subList);
+  const [cgpa, setCgpa] = useState(0);
 
-  useEffect(() => {
-    console.log(subState)
-  }, [subState]);
+
 
 
   const Counter = ({ end }: { end: number }) => {
@@ -76,8 +75,29 @@ export default function Home() {
 
     setSubState([...subState, newSub]);
     e.target.reset();
+    setCgpa(0);
   }
 
+
+  const calcCGPA = () => {
+
+    if (subState.length === 0) {
+      toast.error('Add some subjects first');
+      return;
+    }
+
+    let totalCredit = 0;
+    let totalGrade = 0;
+
+    for (let i = 0; i < subState.length; i++) {
+      totalCredit += Number(subState[i].credit);
+      totalGrade += subState[i].credit * subState[i].grade;
+    }
+    console.log(totalGrade, totalCredit);
+    const cgpa = totalGrade / totalCredit;
+    toast.success(`Your CGPA is ${cgpa.toFixed(2)}`);
+    setCgpa(cgpa);
+  }
 
   return (
     <>
@@ -169,12 +189,36 @@ export default function Home() {
           </div>
 
           <div className={styles.calculate}>
-            <button>Calculate</button>
+            <button onClick={calcCGPA}>Calculate</button>
           </div>
 
           <div className={styles.result}>
 
-            <div className={styles.cgCircle}>
+            {cgpa > 0 &&
+              <div className={styles.cgCircle}>
+                <div className={styles.cgGradient}>
+                  <div className={styles.texts}>
+                    <i><RiShieldStarLine /></i>
+                    <Counter end={cgpa} />
+                    <p>{
+                      cgpa >= 4 ? 'A+' :
+                        cgpa >= 3.75 ? 'A' :
+                          cgpa >= 3.5 ? 'A-' :
+                            cgpa >= 3.25 ? 'B+' :
+                              cgpa >= 3 ? 'B' :
+                                cgpa >= 2.75 ? 'B-' :
+                                  cgpa >= 2.5 ? 'C+' :
+                                    cgpa >= 2.25 ? 'C-' :
+                                      cgpa >= 2 ? 'D' :
+                                        'F'
+                    }</p>
+                  </div>
+                </div>
+              </div>
+
+            }
+
+            {/* <div className={styles.cgCircle}>
               <div className={styles.cgGradient}>
                 <div className={styles.texts}>
                   <i><RiShieldStarLine /></i>
@@ -182,7 +226,7 @@ export default function Home() {
                   <p>A+</p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div>
 
