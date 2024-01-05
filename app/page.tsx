@@ -5,7 +5,7 @@ import styles from './page.module.css'
 import { RiShieldStarLine } from "react-icons/ri";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-
+import party from 'party-js'
 
 
 
@@ -21,7 +21,11 @@ export default function Home() {
   const [cgpa, setCgpa] = useState(0);
 
 
-
+  const handleConfetti = () => {
+    party.confetti(document.querySelector('#result') as HTMLElement, {
+      count: party.variation.range(50, 100)
+    });
+  }
 
   const Counter = ({ end }: { end: number }) => {
     const [count, setCount] = useState(0);
@@ -105,6 +109,9 @@ export default function Home() {
     setCgpa(cgpa);
     setTimeout(() => {
       scrollToBottom();
+      setTimeout(() => {
+        handleConfetti();
+      }, 200);
     }, 500);
   }
 
