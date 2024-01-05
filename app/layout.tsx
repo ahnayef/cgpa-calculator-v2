@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Calculate your CGPA with ease',
   authors: [{ name: "AHNayef", url: "https://ahnayef.t.me" }],
   keywords: ["CGPA", "Calculate", "GPA", "Grade", "Point", "Average", "Calculator", "CGPA Calculator", "GPA Calculator", "Grade Calculator", "Point Calculator"],
-  metadataBase: new URL("https://websiteName.vercel.app"),
+  metadataBase: new URL("https://calcg.vercel.app/"),
   themeColor: "#232530",
   viewport: {
     width: "device-width",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 
   openGraph: {
-    url: 'https://www.websiteName.vercel.app',
+    url: 'https://calcg.vercel.app/',
     siteName: 'CGPA Calculator',
     images: [
       {
