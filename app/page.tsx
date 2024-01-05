@@ -23,6 +23,7 @@ export default function Home() {
 
   const [subState, setSubState] = useState(initialData.subList);
   const [cgpa, setCgpa] = useState(0);
+  const [check, setCheck] = useState(false);
 
 
   const handleConfetti = () => {
@@ -33,6 +34,7 @@ export default function Home() {
 
   const Counter = ({ end }: { end: number }) => {
     const [count, setCount] = useState(0);
+
 
     useEffect(() => {
       let start = 0;
@@ -56,6 +58,12 @@ export default function Home() {
     return <h1>{count.toFixed(2)}</h1>;
   };
 
+
+  const triggerNav = () => {
+    let check = document.getElementsByClassName("triggerNav")[0] as HTMLInputElement;
+    check.checked == true ? check.checked = false : check.checked = true;
+    setCheck(check.checked);
+  }
 
   const handleAdd = (e: any) => {
     e.preventDefault();
@@ -123,16 +131,21 @@ export default function Home() {
     <>
       <ToastContainer theme='dark' />
       <main className={styles.main}>
-        <div className={styles.navGearIcon}>
+      
+        <div className={styles.navGearIcon} onClick={triggerNav}>
           <i><TbInfoHexagonFilled /></i>
         </div>
 
+
+
+      <input type="checkbox" className='triggerNav' id={styles.navTg} hidden/>
         <div className={styles.nav}>
           <h2>Menu</h2>
           <a href='/' target='_'><i><FaGithub /></i> Source code</a>
           <Link href='/feedback' ><i><VscFeedback /></i> Feedback</Link>
-          <button>Close</button>
+          <button onClick={triggerNav}>Close</button>
         </div>
+
 
 
         <div className={styles.inputArea}>
