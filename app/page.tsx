@@ -153,7 +153,7 @@ export default function Home() {
 
             <div className={styles.iSub}>
               <h3>Course: </h3>
-              <input type="text" placeholder='Course Name' id='subject' list='subjects' required />
+              <input type="text" placeholder='Type course name' id='subject' list='subjects' required />
               <datalist id="subjects">
                 <option value="Data Structure and Algorithm" />
                 <option value="Electronic Devices and Circuits" />
