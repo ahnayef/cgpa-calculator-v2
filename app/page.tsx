@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './page.module.css'
 import { RiShieldStarLine } from "react-icons/ri";
 import { TbInfoHexagonFilled } from "react-icons/tb";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaTimes } from "react-icons/fa";
 import { VscFeedback } from "react-icons/vsc";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -100,6 +100,19 @@ export default function Home() {
   }
 
 
+
+  const checkCourseType = (e: any) => {
+    const credit = document.getElementById('credit') as HTMLSelectElement;
+    const value = e.target.value.toLowerCase();
+    credit.value = value.includes("lab") ? "1.5" : "3";
+  };
+
+
+  const removeItem = (name: string) => {
+    const newSublist = subState.filter((sub) => sub.subName != name)
+    setSubState(newSublist)
+  }
+
   const calcCGPA = () => {
 
     if (subState.length === 0) {
@@ -130,14 +143,14 @@ export default function Home() {
     <>
       <ToastContainer theme='dark' />
       <main className={styles.main}>
-      
+
         <div className={styles.navGearIcon} onClick={triggerNav}>
           <i><TbInfoHexagonFilled /></i>
         </div>
 
 
 
-      <input type="checkbox" className='triggerNav' id={styles.navTg} hidden/>
+        <input type="checkbox" className='triggerNav' id={styles.navTg} hidden />
         <div className={styles.nav}>
           <h2>Menu</h2>
           <a href='https://github.com/ahnayef/cgpa-calculator-v2' target='_'><i><FaGithub /></i> Source code</a>
@@ -153,7 +166,7 @@ export default function Home() {
 
             <div className={styles.iSub}>
               <h3>Course: </h3>
-              <input type="text" placeholder='Type course name' id='subject' list='subjects' required />
+              <input type="text" placeholder='Type course name' id='subject' list='subjects' onChange={checkCourseType} required />
               <datalist id="subjects">
                 <option value="Data Structure and Algorithm" />
                 <option value="Electronic Devices and Circuits" />
@@ -183,7 +196,7 @@ export default function Home() {
               </div>
               <div className={styles.iCredit}>
                 <h3>Credit: </h3>
-                <select name="" id="">
+                <select name="" id="credit">
                   <option value={3}>3</option>
                   <option value={1.5}>1.5</option>
                 </select>
@@ -200,19 +213,8 @@ export default function Home() {
               <h3>Subject</h3>
               <h3>Grade</h3>
               <h3>Credit</h3>
+              <h3>Action</h3>
             </div>
-
-            {/* <div className={styles.sub}>
-            <h3>EDC</h3>
-            <h3>A+</h3>
-            <h3>Credit</h3>
-          </div>
-
-          <div className={styles.sub}>
-            <h3>DSA</h3>
-            <h3>A+</h3>
-            <h3>Credit</h3>
-          </div>  */}
             {subState.length > 0 &&
               subState.map((sub, index) => {
                 return (
@@ -220,55 +222,48 @@ export default function Home() {
                     <h3>{sub.subName}</h3>
                     <h3>{sub.grade}</h3>
                     <h3>{sub.credit}</h3>
+                    <h3 onClick={() => removeItem(sub.subName)}> <i><FaTimes /></i></h3>
                   </div>
                 )
               })
             }
-
-
           </div>
+
 
           <div className={styles.calculate}>
             <button onClick={calcCGPA}>Calculate</button>
           </div>
 
-          <div className={styles.result} id='result'>
+          {cgpa > 0 && <div className={styles.result} id='result'>
 
-            {cgpa > 0 &&
-              <div className={styles.cgCircle}>
-                <div className={styles.cgGradient}>
-                  <div className={styles.texts}>
-                    <i><RiShieldStarLine /></i>
-                    <Counter end={cgpa} />
-                    <p>{
-                      cgpa >= 4 ? 'A+' :
-                        cgpa >= 3.75 ? 'A' :
-                          cgpa >= 3.5 ? 'A-' :
-                            cgpa >= 3.25 ? 'B+' :
-                              cgpa >= 3 ? 'B' :
-                                cgpa >= 2.75 ? 'B-' :
-                                  cgpa >= 2.5 ? 'C+' :
-                                    cgpa >= 2.25 ? 'C-' :
-                                      cgpa >= 2 ? 'D' :
-                                        'F'
-                    }</p>
-                  </div>
-                </div>
-              </div>
 
-            }
-
-            {/* <div className={styles.cgCircle}>
+            <div className={styles.cgCircle}>
               <div className={styles.cgGradient}>
                 <div className={styles.texts}>
                   <i><RiShieldStarLine /></i>
-                  <Counter end={3.65} />
-                  <p>A+</p>
+                  <Counter end={cgpa} />
+                  <p>{
+                    cgpa >= 4 ? 'A+' :
+                      cgpa >= 3.75 ? 'A' :
+                        cgpa >= 3.5 ? 'A-' :
+                          cgpa >= 3.25 ? 'B+' :
+                            cgpa >= 3 ? 'B' :
+                              cgpa >= 2.75 ? 'B-' :
+                                cgpa >= 2.5 ? 'C+' :
+                                  cgpa >= 2.25 ? 'C' :
+                                    cgpa >= 2 ? 'D' :
+                                      'F'
+                  }</p>
                 </div>
               </div>
-            </div> */}
+            </div>
 
-          </div>
+
+            <div className={styles.close} onClick={() => { setCgpa(0) }}>
+              Close
+            </div>
+
+          </div>}
 
         </div>
         <div id="bottomRef"></div>

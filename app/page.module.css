@@ -295,6 +295,11 @@
     width: 25%;
 }
 
+.sub h3 i {
+    color: var(--red);
+    cursor: pointer;
+}
+
 .calculate button {
     background: linear-gradient(45deg, #56CCF2, #2F80ED);
     border-radius: 0.1em;
@@ -313,8 +318,21 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 10px;
-    padding: 1em;
+    padding: 1.5em;
+    background-color: var(--background);
+    border: 0.5px solid #a2b6ca70;
+    box-shadow: rgba(0, 0, 0, 0.30) 1.95px 1.95px 2.6px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    animation: bounceIn 0.5s;
+    z-index: 2;
 }
 
 .result .cgCircle {
@@ -360,6 +378,17 @@
     height: 7.2em;
     animation: counterRotate 2s infinite linear;
     gap: 0.3em;
+}
+
+
+.result .close{
+    margin:1em 0;
+    padding: 0.5em 0.5em;
+    background-color: var(--red);
+    color: #fff;
+    cursor: pointer;
+    border: 0.5px solid #a2b6ca70;
+    box-shadow: rgba(0, 0, 0, 0.30) 1.95px 1.95px 2.6px;
 }
 
 .texts i {
@@ -419,3 +448,42 @@
         transform: rotate(-360deg);
     }
 }
+
+
+@keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    20% {
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  
+    40% {
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+  
+    60% {
+      opacity: 1;
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+  
+    80% {
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+  
+    to {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+  }
