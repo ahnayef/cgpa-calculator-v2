@@ -189,7 +189,7 @@ export default function Home() {
                   <option value={3}>B</option>
                   <option value={2.75}>B-</option>
                   <option value={2.5}>C+</option>
-                  <option value={2.25}>C-</option>
+                  <option value={2.25}>C</option>
                   <option value={2}>D</option>
                   <option value={0}>F</option>
                 </select>
@@ -207,7 +207,7 @@ export default function Home() {
             </div>
           </form>
 
-          <div className={styles.subList}>
+          {subState.length > 0 && <> <div className={styles.subList}>
 
             <div className={styles.sub}>
               <h3>Subject</h3>
@@ -230,9 +230,11 @@ export default function Home() {
           </div>
 
 
-          <div className={styles.calculate}>
-            <button onClick={calcCGPA}>Calculate</button>
-          </div>
+            <div className={styles.calculate}>
+              <button onClick={calcCGPA}>Calculate</button>
+            </div>
+          </>
+          }
 
           {cgpa > 0 && <div className={styles.result} id='result'>
 
